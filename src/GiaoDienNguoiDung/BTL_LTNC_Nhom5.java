@@ -18,17 +18,9 @@ public class BTL_LTNC_Nhom5 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //  HELLO LO LO L OL O LO L O O L OL O L O LO L O L OL O L O L O
-        KhachHang k = new KhachHang("01","Duc", "Ngày sinh", 0123456 ,"nam", "HN",  1);
-        System.out.println(k.getId());
-        String s = new String("df");
-        
-        
-        // Chó Đạtf  fdsl fjsdlfjlsd jfal
-        // èodjkfldsjfkljsdlkfjdsklf
-        // lalalalalalal
-        
-        //anh dat dep trai
+        GiaoDienDangNhap dgdn = new GiaoDienDangNhap();
+        dgdn.setLocationRelativeTo(null);
+        dgdn.show();
         
     }
     
