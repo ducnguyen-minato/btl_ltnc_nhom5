@@ -74,7 +74,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="11"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/es5.png"/>
+              <Image iconType="2" name="C:\Users\H\Documents\NetBeansProjects\btl_ltnc_nhom5\src\images\es5.png"/>
             </Property>
           </Properties>
         </Component>
@@ -140,7 +140,7 @@
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/icon_account.png"/>
+                  <Image iconType="2" name="C:\Users\H\Documents\NetBeansProjects\btl_ltnc_nhom5\src\images\icon_account.png"/>
                 </Property>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
@@ -149,7 +149,7 @@
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/icons_password.png"/>
+                  <Image iconType="2" name="C:\Users\H\Documents\NetBeansProjects\btl_ltnc_nhom5\src\images\icons_password.png"/>
                 </Property>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>

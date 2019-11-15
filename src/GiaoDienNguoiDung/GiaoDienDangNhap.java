@@ -5,19 +5,69 @@
  */
 package GiaoDienNguoiDung;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import ketnoicsdl.KetNoiCSDL;
+
 /**
  *
  * @author Dinh Duc
  */
 public class GiaoDienDangNhap extends javax.swing.JFrame {
-
+    private String taiKhoan;
+    private String matKhau;
     /**
      * Creates new form GiaoDienDangNhap
      */
     public GiaoDienDangNhap() {
         initComponents();
+        taiKhoan = "";
+        matKhau = "";
     }
 
+    public void kiemTraDangNhap () {
+        taiKhoan = jTextField1.getText();
+        matKhau = jTextField2.getText();
+        String sql = "SELECT * FROM TaiKhoan WHERE MaNV = '" + taiKhoan + 
+                "' AND MatKhau = '" + matKhau +"' LIMIT 1";
+        try {
+            KetNoiCSDL kn = new KetNoiCSDL();
+            Statement stmt = kn.getConn().createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            
+            if (rs.next()) {
+                // to do xu ly sau khi dang nhap thanh cong
+                jLabel5.setVisible(false);
+            } else {
+                // to do xu ly sau khi dang nhap that bai
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Loi ket noi csdl!");
+            Logger.getLogger(GiaoDienDangNhap.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    // ham kiem tra ki tu nhap vao, tra ve gia tri fasle neu rong va nguoc lai
+    private boolean kiemTraKiTuNhap () {
+        if (jTextField1.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(this, "Tai khoan khong de trong!");
+            if (jTextField2.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(this, "Mat khau khong de trong!");
+            return false;
+        }
+            return false;
+        }
+        if (jTextField2.getText().compareTo("") == 0) {
+            JOptionPane.showMessageDialog(this, "Mat khau khong de trong!");
+            return false;
+        }
+        return true;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,17 +95,17 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/es5.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\H\\Documents\\NetBeansProjects\\btl_ltnc_nhom5\\src\\images\\es5.png")); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("ĐĂNG NHẬP");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_account.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\H\\Documents\\NetBeansProjects\\btl_ltnc_nhom5\\src\\images\\icon_account.png")); // NOI18N
         jLabel3.setOpaque(true);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons_password.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\H\\Documents\\NetBeansProjects\\btl_ltnc_nhom5\\src\\images\\icons_password.png")); // NOI18N
         jLabel4.setOpaque(true);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +217,9 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        if (kiemTraKiTuNhap()) {
+            kiemTraDangNhap();
+        } 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
