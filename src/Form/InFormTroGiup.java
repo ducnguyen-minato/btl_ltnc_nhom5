@@ -5,6 +5,11 @@
  */
 package Form;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 /**
  *
  * @author ADMIN
@@ -27,144 +32,153 @@ public class InFormTroGiup extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jlHuongDan = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jlTroGiup = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
         setTitle("Trợ giúp");
+        try {
+            setSelected(true);
+        } catch (java.beans.PropertyVetoException e1) {
+            e1.printStackTrace();
+        }
+        setVisible(true);
+        getContentPane().setLayout(null);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel6.setText("Nguyễn Đình Đức");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(400, 120, 114, 19);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel7.setText("Phạm Ngọc Đan");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(400, 150, 106, 19);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel8.setText("Trần Tiến Đạt");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(400, 180, 92, 19);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel9.setText("Đinh Hoàng Phú");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(400, 210, 104, 19);
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel10.setText("Phan Văn Thịnh");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(400, 240, 103, 19);
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(102, 0, 51));
+        jLabel11.setText("Liên Hệ:");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(220, 280, 53, 19);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 102, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Chương Trình Quản Lý Siêu Thị Điện Máy");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(80, 30, 469, 33);
+
+        jlHuongDan.setFont(new java.awt.Font("Tahoma", 2, 15)); // NOI18N
+        jlHuongDan.setForeground(new java.awt.Color(102, 0, 0));
+        jlHuongDan.setText("<html> <a href=\\\"\\\">Hướng dẫn sử dụng</a></html>");
+        jlHuongDan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlHuongDanMouseClicked(evt);
+            }
+        });
+        getContentPane().add(jlHuongDan);
+        jlHuongDan.setBounds(220, 320, 130, 19);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logoset.png"))); // NOI18N
+        jLabel2.setRequestFocusEnabled(false);
+        jLabel2.setVerifyInputWhenFocusTarget(false);
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(20, 70, 190, 216);
+
+        jlTroGiup.setFont(new java.awt.Font("Tahoma", 2, 15)); // NOI18N
+        jlTroGiup.setForeground(new java.awt.Color(102, 0, 51));
+        jlTroGiup.setText("<html> <a href=\\\"\\\">Trogiup@.com</a></html>");
+        jlTroGiup.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlTroGiupMouseClicked(evt);
+            }
+        });
+        getContentPane().add(jlTroGiup);
+        jlTroGiup.setBounds(280, 280, 96, 19);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 0, 51));
         jLabel3.setText("Giảng viên hướng dẫn:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(230, 90, 147, 19);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 0, 0));
         jLabel4.setText("TS. Phạm Doãn Tĩnh");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(400, 90, 137, 19);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 0, 51));
         jLabel5.setText("Nhóm thực hiện:");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(230, 120, 109, 19);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        jLabel6.setText("Nguyễn Đình Đức");
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        jLabel7.setText("Phạm Ngọc Đan");
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        jLabel8.setText("Trần Tiến Đạt");
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        jLabel9.setText("Đinh Hoàng Phú");
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        jLabel10.setText("Phan Văn Thịnh");
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
-        jLabel11.setText("Liên Hệ:");
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 2, 15)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 102, 0));
-        jLabel12.setText("Hướng dẫn sử dụng");
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 2, 15)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 51, 0));
-        jLabel13.setText("Trogiup@gmail.com");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel13))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel5)))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))))
-                .addGap(0, 42, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel12)
-                        .addGap(8, 8, 8))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dhbk.png"))); // NOI18N
+        jLabel14.setText("jLabel14");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(0, -4, 610, 380);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jlTroGiupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlTroGiupMouseClicked
+         try {
+          Desktop.getDesktop().mail(new URI("mailto:thinhphan011098@gmail.com?subject=TRO_GIUP_PHAN_MEM_QUAN_LY_SIEU_THI_DIEN_MAY"));
+        } catch (URISyntaxException | IOException ex) {
+          // lỗi
+        }
+    }//GEN-LAST:event_jlTroGiupMouseClicked
+
+    private void jlHuongDanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlHuongDanMouseClicked
+        try {
+                    Desktop.getDesktop().browse(new URI("https://www.facebook.com/phanvanthinh98"));
+                } catch (IOException | URISyntaxException e1) {
+                    e1.printStackTrace();
+                }
+    }//GEN-LAST:event_jlHuongDanMouseClicked
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -173,5 +187,7 @@ public class InFormTroGiup extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jlHuongDan;
+    private javax.swing.JLabel jlTroGiup;
     // End of variables declaration//GEN-END:variables
 }
