@@ -21,6 +21,7 @@ public class BTL_LTNC_Nhom5 {
         GiaoDienDangNhap dgdn = new GiaoDienDangNhap();
         dgdn.setLocationRelativeTo(null);
         dgdn.show();
+        // phu push
         
     }
     
