@@ -32,17 +32,20 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
     public void kiemTraDangNhap () {
         taiKhoan = jTextField1.getText();
         matKhau = jTextField2.getText();
-        String sql = "SELECT * FROM TaiKhoan WHERE MaNV = '" + taiKhoan + 
-                "' AND MatKhau = '" + matKhau +"' LIMIT 1";
+        String sql = "SELECT COUNT(*) FROM TaiKhoan WHERE username = '" + taiKhoan + 
+                "' AND MatKhau = '" + matKhau +"'";
+        // Lấy count truy vấn tài khoản: 0(không tồn tại) và 1(tồn tại trong db); 
+        //không thể bằng 2 vì username là khóa chính nên không thể trùng
         try {
             KetNoiCSDL kn = new KetNoiCSDL();
             Statement stmt = kn.getConn().createStatement();
             ResultSet rs = stmt.executeQuery(sql);
-            
-            if (rs.next()) {
+            rs.next();
+            if (rs.getInt(1)==1) {
                 // to do xu ly sau khi dang nhap thanh cong
-                jLabel5.setVisible(false);
+                jLabel5.setText("Tài khoản Hợp lệ");
             } else {
+                jLabel5.setText("Tài khoản Không tồn tại");
                 // to do xu ly sau khi dang nhap that bai
             }
         } catch (SQLException ex) {
@@ -95,17 +98,17 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\H\\Documents\\NetBeansProjects\\btl_ltnc_nhom5\\src\\images\\es5.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/es5.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("ĐĂNG NHẬP");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\H\\Documents\\NetBeansProjects\\btl_ltnc_nhom5\\src\\images\\icon_account.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_account.png"))); // NOI18N
         jLabel3.setOpaque(true);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\H\\Documents\\NetBeansProjects\\btl_ltnc_nhom5\\src\\images\\icons_password.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons_password.png"))); // NOI18N
         jLabel4.setOpaque(true);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +135,6 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
         });
 
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel5.setText("Thông báo đăng nhập thất bại");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -169,8 +171,8 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -191,18 +193,18 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
