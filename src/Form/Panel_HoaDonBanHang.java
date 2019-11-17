@@ -38,7 +38,7 @@ public class Panel_HoaDonBanHang extends javax.swing.JPanel {
         jLabel1.setText("jLabel1");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("ĐÂY LÀ PANEL HÓA ĐƠN BÁN HÀNG CỦA NHÂN VIÊN BÁN HÀNG");
+        jLabel2.setText("ĐÂY LÀ PANEL HÓA ĐƠN BÁN HÀNG CỦA NHÂN VIÊN BÁN HÀNG (Form/Panel_HoaDonBanHang)");
 
         jLabel3.setText("l3");
 
@@ -55,8 +55,8 @@ public class Panel_HoaDonBanHang extends javax.swing.JPanel {
                         .addGap(374, 374, 374)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(71, 71, 71)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 736, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -64,9 +64,9 @@ public class Panel_HoaDonBanHang extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1)
-                .addGap(166, 166, 166)
+                .addGap(165, 165, 165)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 220, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(25, 25, 25))
         );

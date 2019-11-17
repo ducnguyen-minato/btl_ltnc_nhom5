@@ -38,7 +38,7 @@ public class Panel_HoaDonNhapHang extends javax.swing.JPanel {
         jLabel1.setText("jLabel1");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setText("ĐÂY LÀ HÓA ĐƠN NHẬP HÀNG CỦA THỦ KHO");
+        jLabel2.setText("ĐÂY LÀ HÓA ĐƠN NHẬP HÀNG CỦA THỦ KHO (Form/Panel_HoaDonNhapHang)");
 
         jLabel3.setText("l3");
 
@@ -55,8 +55,8 @@ public class Panel_HoaDonNhapHang extends javax.swing.JPanel {
                         .addGap(374, 374, 374)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(227, 227, 227)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 606, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
