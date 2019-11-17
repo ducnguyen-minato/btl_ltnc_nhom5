@@ -13,13 +13,14 @@ public class Nguoi {
     private String id;
     private String name;
     private String ngaySinh;
-    private int soDienThoai;
+    private String soDienThoai;
     private String gioiTinh;
     private String diaChi;
     
+    
     //Ham Tao
 
-    public Nguoi(String id, String name, String ngaySinh, int soDienThoai, String gioiTinh, String diaChi) {
+    public Nguoi(String id, String name, String ngaySinh, String soDienThoai, String gioiTinh, String diaChi) {
         this.id = id;
         this.name = name;
         this.ngaySinh = ngaySinh;
@@ -52,11 +53,11 @@ public class Nguoi {
         this.ngaySinh = ngaySinh;
     }
 
-    public int getSoDienThoai() {
+    public String getSoDienThoai() {
         return soDienThoai;
     }
 
-    public void setSoDienThoai(int soDienThoai) {
+    public void setSoDienThoai(String soDienThoai) {
         this.soDienThoai = soDienThoai;
     }
 

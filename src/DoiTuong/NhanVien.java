@@ -11,14 +11,16 @@ package DoiTuong;
  */
 public class NhanVien extends Nguoi{
     private String chucVu;
-    private int CMTND;
-    private String path_Anh;
+    private String email;
+    private String anh_Path;
+    private String ghiChu;
 
-    public NhanVien(String id, String name, String ngaySinh, int soDienThoai, String gioiTinh, String diaChi, String chucVu, int CMTND, String path_Anh) {
+    public NhanVien(String id, String name, String ngaySinh, String soDienThoai, String gioiTinh, String diaChi, String chucVu, String email, String anh_Path, String ghiChu) {
         super(id, name, ngaySinh, soDienThoai, gioiTinh, diaChi);
         this.chucVu = chucVu;
-        this.CMTND = CMTND;
-        this.path_Anh = path_Anh;
+        this.email = email;
+        this.anh_Path = anh_Path;
+        this.ghiChu = ghiChu;
     }
 
     public String getChucVu() {
@@ -28,6 +30,32 @@ public class NhanVien extends Nguoi{
     public void setChucVu(String chucVu) {
         this.chucVu = chucVu;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAnh_Path() {
+        return anh_Path;
+    }
+
+    public void setAnh_Path(String anh_Path) {
+        this.anh_Path = anh_Path;
+    }
+
+    public String getGhiChu() {
+        return ghiChu;
+    }
+
+    public void setGhiChu(String ghiChu) {
+        this.ghiChu = ghiChu;
+    }
+    
+    
     
     
     

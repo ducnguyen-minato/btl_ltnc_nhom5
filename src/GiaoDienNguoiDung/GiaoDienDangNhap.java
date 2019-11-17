@@ -5,6 +5,7 @@
  */
 package GiaoDienNguoiDung;
 
+import DoiTuong.NhanVien;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -32,21 +33,41 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
     public void kiemTraDangNhap () {
         taiKhoan = jTextField1.getText();
         matKhau = jTextField2.getText();
-        String sql = "SELECT COUNT(*) FROM TaiKhoan WHERE username = '" + taiKhoan + 
+        String sqlKiemTra = "SELECT COUNT(*) FROM TaiKhoan WHERE username = '" + taiKhoan + 
                 "' AND MatKhau = '" + matKhau +"'";
         // Lấy count truy vấn tài khoản: 0(không tồn tại) và 1(tồn tại trong db); 
         //không thể bằng 2 vì username là khóa chính nên không thể trùng
         try {
             KetNoiCSDL kn = new KetNoiCSDL();
             Statement stmt = kn.getConn().createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
+            ResultSet rs = stmt.executeQuery(sqlKiemTra);
             rs.next();
             if (rs.getInt(1)==1) {
-                // to do xu ly sau khi dang nhap thanh cong
-                jLabel5.setText("Tài khoản Hợp lệ");
+                // to do xu ly sau khi ĐĂNG NHẬP THÀNH CÔNG
+                this.dispose(); //tắt giao diện đăng nhập
+                
+                //Khởi tạo đối tượng nhân viên đang dùng bằng tài khoản đang sử dụng
+                String sqlLayMaNV = "SELECT MaNV FROM TaiKhoan WHERE username = '" + taiKhoan + 
+                "' AND MatKhau = '" + matKhau +"'";
+                ResultSet rs_MaNV = stmt.executeQuery(sqlLayMaNV);
+                rs_MaNV.next();
+                String maNV = rs_MaNV.getString(1);
+                    //Lấy data trong bảng nhân viên từ mã nhân viên có được:
+                    String sqlLayNhanVien = "SELECT * FROM nhanvien WHERE MaNV = '" + maNV + "'";
+                    ResultSet rs_NhanVien = stmt.executeQuery(sqlLayNhanVien);
+                    rs_NhanVien.next();
+                    Main.nhanvien = new NhanVien(rs_NhanVien.getString(1), rs_NhanVien.getString(2), 
+                            rs_NhanVien.getString(3), rs_NhanVien.getString(4), rs_NhanVien.getString(5), 
+                            rs_NhanVien.getString(6), rs_NhanVien.getString(7), rs_NhanVien.getString(8), 
+                            rs_NhanVien.getString(9), rs_NhanVien.getString(10));
+                System.out.println(Main.nhanvien.getName());
+                // Mở giao diện chính
+                GiaoDienChinh gdChinh = new GiaoDienChinh();
+                gdChinh.setLocationRelativeTo(null);
+                gdChinh.show();
             } else {
                 jLabel5.setText("Tài khoản Không tồn tại");
-                // to do xu ly sau khi dang nhap that bai
+                // to do xu ly sau khi ĐĂNG NHẬP THẤT BẠI
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, "Loi ket noi csdl!");
@@ -108,7 +129,7 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
         jLabel3.setOpaque(true);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons_password.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_password.png"))); // NOI18N
         jLabel4.setOpaque(true);
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {

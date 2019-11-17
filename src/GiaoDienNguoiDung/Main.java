@@ -6,12 +6,15 @@
 package GiaoDienNguoiDung;
 
 import DoiTuong.KhachHang;
+import DoiTuong.NhanVien;
 
 /**
  *
  * @author Dinh Duc
  */
-public class BTL_LTNC_Nhom5 {
+public class Main {
+    // Tạo đối tượng tĩnh là 1 nhân viên hiện tại đang dùng là ai dựa vào tài khoản đăng nhập
+    public static NhanVien nhanvien;
 
     /**
      * @param args the command line arguments
@@ -21,7 +24,7 @@ public class BTL_LTNC_Nhom5 {
         GiaoDienDangNhap dgdn = new GiaoDienDangNhap();
         dgdn.setLocationRelativeTo(null);
         dgdn.show();
-        // phu push
+        
         
     }
     
