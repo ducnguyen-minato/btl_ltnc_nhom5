@@ -6,6 +6,7 @@
 package GiaoDienNguoiDung;
 
 import DoiTuong.NhanVien;
+import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -137,10 +138,20 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
+            }
+        });
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField2KeyPressed(evt);
             }
         });
 
@@ -244,6 +255,32 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
             kiemTraDangNhap();
         } 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            jTextField1.transferFocus();
+        }
+        if(evt.getKeyCode() == KeyEvent.VK_DOWN){
+            jTextField1.transferFocus();
+        }
+        if(evt.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_UP){
+            jTextField2.transferFocusBackward();
+        }
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            if (kiemTraKiTuNhap()) {
+            kiemTraDangNhap();
+            } 
+        }
+        if(evt.getKeyCode() == KeyEvent.VK_ESCAPE){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jTextField2KeyPressed
 
     /**
      * @param args the command line arguments
