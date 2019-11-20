@@ -23,6 +23,7 @@ import Form.Panel_TimKiem;
 import Form.Panel_TroGiup;
 import java.awt.Component;
 import java.awt.PopupMenu;
+import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -440,11 +441,6 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lb_hoadonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_hoadonMouseClicked
-        // TODO add your handling code here:
-        ShowPanelViTriThu(0);
-    }//GEN-LAST:event_lb_hoadonMouseClicked
-
     private void lb_hanghoaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_hanghoaMouseClicked
         // TODO add your handling code here:pn_HoaDonBanHang.setVisible(true);
         ShowPanelViTriThu(1);
@@ -499,6 +495,11 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         // TODO add your handling code here:
         ShowPanelViTriThu(10);
     }//GEN-LAST:event_lb_taikhoanMouseClicked
+
+    private void lb_hoadonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_hoadonMouseClicked
+        // TODO add your handling code here:
+        ShowPanelViTriThu(0);
+    }//GEN-LAST:event_lb_hoadonMouseClicked
 
     /**
      * @param args the command line arguments

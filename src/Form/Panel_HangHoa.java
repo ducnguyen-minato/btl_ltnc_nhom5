@@ -31,8 +31,31 @@ public class Panel_HangHoa extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(255, 255, 0));
+        setForeground(new java.awt.Color(255, 51, 0));
         setPreferredSize(new java.awt.Dimension(1200, 600));
         setLayout(null);
 
@@ -64,12 +87,216 @@ public class Panel_HangHoa extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(0, 0, 733, 510);
+        jScrollPane1.setBounds(13, 19, 720, 420);
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 153));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Thông tin hàng hóa");
+        add(jLabel2);
+        jLabel2.setBounds(903, 13, 170, 30);
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 153));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel3.setText("Mã hàng hóa:");
+        add(jLabel3);
+        jLabel3.setBounds(770, 80, 100, 30);
+
+        jLabel4.setBackground(new java.awt.Color(0, 0, 153));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel4.setText("Tên hàng hóa:");
+        add(jLabel4);
+        jLabel4.setBounds(770, 130, 100, 30);
+
+        jLabel5.setBackground(new java.awt.Color(0, 0, 153));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel5.setText("Nhà sản xuất:");
+        add(jLabel5);
+        jLabel5.setBounds(770, 180, 100, 30);
+
+        jLabel6.setBackground(new java.awt.Color(0, 0, 153));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel6.setText("Nhà cung cấp:");
+        add(jLabel6);
+        jLabel6.setBounds(770, 230, 100, 30);
+
+        jLabel7.setBackground(new java.awt.Color(0, 0, 153));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel7.setText("Giá nhập:");
+        add(jLabel7);
+        jLabel7.setBounds(770, 280, 100, 30);
+
+        jLabel8.setBackground(new java.awt.Color(0, 0, 153));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel8.setText("Giá bán:");
+        add(jLabel8);
+        jLabel8.setBounds(770, 330, 100, 30);
+
+        jTextField6.setForeground(new java.awt.Color(0, 51, 204));
+        jTextField6.setBorder(null);
+        add(jTextField6);
+        jTextField6.setBounds(890, 180, 283, 30);
+
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 51, 204));
+        jButton1.setText("Thoát");
+        jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1);
+        jButton1.setBounds(1080, 500, 100, 40);
+
+        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 51, 204));
+        jButton2.setText("Lưu");
+        jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        add(jButton2);
+        jButton2.setBounds(920, 500, 100, 40);
+
+        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(0, 51, 204));
+        jButton3.setText("Xóa");
+        jButton3.setBorder(null);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        add(jButton3);
+        jButton3.setBounds(770, 420, 100, 40);
+
+        jButton4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(0, 51, 204));
+        jButton4.setText("Làm mới");
+        jButton4.setBorder(null);
+        add(jButton4);
+        jButton4.setBounds(1080, 420, 100, 40);
+
+        jButton5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(0, 51, 204));
+        jButton5.setText("Sửa");
+        jButton5.setBorder(null);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        add(jButton5);
+        jButton5.setBounds(920, 420, 100, 40);
+
+        jTextField7.setForeground(new java.awt.Color(0, 51, 204));
+        jTextField7.setBorder(null);
+        add(jTextField7);
+        jTextField7.setBounds(890, 330, 283, 30);
+
+        jTextField8.setForeground(new java.awt.Color(0, 51, 204));
+        jTextField8.setBorder(null);
+        add(jTextField8);
+        jTextField8.setBounds(890, 280, 283, 30);
+
+        jTextField9.setForeground(new java.awt.Color(0, 51, 204));
+        jTextField9.setBorder(null);
+        add(jTextField9);
+        jTextField9.setBounds(890, 230, 283, 30);
+
+        jTextField10.setForeground(new java.awt.Color(0, 51, 204));
+        jTextField10.setBorder(null);
+        add(jTextField10);
+        jTextField10.setBounds(890, 80, 283, 30);
+
+        jTextField11.setForeground(new java.awt.Color(0, 51, 204));
+        jTextField11.setBorder(null);
+        add(jTextField11);
+        jTextField11.setBounds(890, 130, 283, 30);
+
+        jButton6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(0, 51, 204));
+        jButton6.setText("In");
+        jButton6.setBorder(null);
+        add(jButton6);
+        jButton6.setBounds(770, 500, 100, 40);
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel1.setText("Tìm kiếm");
+        add(jLabel1);
+        jLabel1.setBounds(90, 500, 90, 40);
+        add(jTextField1);
+        jTextField1.setBounds(200, 502, 260, 40);
+
+        jButton7.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(0, 0, 204));
+        jButton7.setText("Tìm");
+        jButton7.setBorder(null);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        add(jButton7);
+        jButton7.setBounds(500, 500, 90, 40);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
