@@ -53,6 +53,8 @@ public class Panel_HangHoa extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 0));
         setForeground(new java.awt.Color(255, 51, 0));
@@ -87,53 +89,53 @@ public class Panel_HangHoa extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(13, 19, 720, 420);
+        jScrollPane1.setBounds(10, 10, 720, 400);
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 153));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Thông tin hàng hóa");
         add(jLabel2);
-        jLabel2.setBounds(903, 13, 170, 30);
+        jLabel2.setBounds(903, 13, 220, 30);
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 153));
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 51, 204));
         jLabel3.setText("Mã hàng hóa:");
         add(jLabel3);
         jLabel3.setBounds(770, 80, 100, 30);
 
         jLabel4.setBackground(new java.awt.Color(0, 0, 153));
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 51, 204));
         jLabel4.setText("Tên hàng hóa:");
         add(jLabel4);
         jLabel4.setBounds(770, 130, 100, 30);
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 153));
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 51, 204));
         jLabel5.setText("Nhà sản xuất:");
         add(jLabel5);
         jLabel5.setBounds(770, 180, 100, 30);
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 153));
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 51, 204));
         jLabel6.setText("Nhà cung cấp:");
         add(jLabel6);
         jLabel6.setBounds(770, 230, 100, 30);
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 153));
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 51, 204));
         jLabel7.setText("Giá nhập:");
         add(jLabel7);
         jLabel7.setBounds(770, 280, 100, 30);
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 153));
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 51, 204));
         jLabel8.setText("Giá bán:");
         add(jLabel8);
@@ -154,7 +156,7 @@ public class Panel_HangHoa extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(1080, 500, 100, 40);
+        jButton1.setBounds(640, 510, 90, 50);
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 51, 204));
@@ -166,7 +168,7 @@ public class Panel_HangHoa extends javax.swing.JPanel {
             }
         });
         add(jButton2);
-        jButton2.setBounds(920, 500, 100, 40);
+        jButton2.setBounds(510, 510, 90, 50);
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 51, 204));
@@ -178,14 +180,14 @@ public class Panel_HangHoa extends javax.swing.JPanel {
             }
         });
         add(jButton3);
-        jButton3.setBounds(770, 420, 100, 40);
+        jButton3.setBounds(10, 510, 90, 50);
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 51, 204));
         jButton4.setText("Làm mới");
         jButton4.setBorder(null);
         add(jButton4);
-        jButton4.setBounds(1080, 420, 100, 40);
+        jButton4.setBounds(260, 510, 90, 50);
 
         jButton5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(0, 51, 204));
@@ -197,7 +199,7 @@ public class Panel_HangHoa extends javax.swing.JPanel {
             }
         });
         add(jButton5);
-        jButton5.setBounds(920, 420, 100, 40);
+        jButton5.setBounds(130, 510, 90, 50);
 
         jTextField7.setForeground(new java.awt.Color(0, 51, 204));
         jTextField7.setBorder(null);
@@ -229,15 +231,15 @@ public class Panel_HangHoa extends javax.swing.JPanel {
         jButton6.setText("In");
         jButton6.setBorder(null);
         add(jButton6);
-        jButton6.setBounds(770, 500, 100, 40);
+        jButton6.setBounds(390, 510, 90, 50);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 204));
         jLabel1.setText("Tìm kiếm");
         add(jLabel1);
-        jLabel1.setBounds(90, 500, 90, 40);
+        jLabel1.setBounds(120, 440, 90, 40);
         add(jTextField1);
-        jTextField1.setBounds(200, 502, 260, 40);
+        jTextField1.setBounds(230, 440, 260, 40);
 
         jButton7.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
         jButton7.setForeground(new java.awt.Color(0, 0, 204));
@@ -249,7 +251,19 @@ public class Panel_HangHoa extends javax.swing.JPanel {
             }
         });
         add(jButton7);
-        jButton7.setBounds(500, 500, 90, 40);
+        jButton7.setBounds(530, 440, 100, 40);
+
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_hanghoa.png"))); // NOI18N
+        add(jLabel9);
+        jLabel9.setBounds(880, 410, 260, 170);
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 2, 13)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel10.setText("Hình ảnh hàng hóa:");
+        add(jLabel10);
+        jLabel10.setBounds(950, 380, 110, 16);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -282,6 +296,7 @@ public class Panel_HangHoa extends javax.swing.JPanel {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -289,6 +304,7 @@ public class Panel_HangHoa extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;

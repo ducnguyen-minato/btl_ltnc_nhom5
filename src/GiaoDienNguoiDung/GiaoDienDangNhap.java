@@ -251,7 +251,7 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
 
     private void tf_UseNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_UseNameKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-            tf_UseName.transferFocus(); 
+            tf_UseName.transferFocus();       
         }
         if(evt.getKeyCode() == KeyEvent.VK_DOWN){
             tf_UseName.transferFocus();
