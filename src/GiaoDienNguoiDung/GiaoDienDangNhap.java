@@ -32,8 +32,8 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
     }
 
     public void kiemTraDangNhap () {
-        taiKhoan = jTextField1.getText();
-        matKhau = jTextField2.getText();
+        taiKhoan = tf_UseName.getText();
+        matKhau = jPassword.getText();
         String sqlKiemTra = "SELECT COUNT(*) FROM TaiKhoan WHERE username = '" + taiKhoan + 
                 "' AND MatKhau = '" + matKhau +"'";
         // Lấy count truy vấn tài khoản: 0(không tồn tại) và 1(tồn tại trong db); 
@@ -79,15 +79,15 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
     
     // ham kiem tra ki tu nhap vao, tra ve gia tri fasle neu rong va nguoc lai
     private boolean kiemTraKiTuNhap () {
-        if (jTextField1.getText().compareTo("") == 0) {
+        if (tf_UseName.getText().compareTo("") == 0) {
             JOptionPane.showMessageDialog(this, "Tai khoan khong de trong!");
-            if (jTextField2.getText().compareTo("") == 0) {
+            if (jPassword.getText().compareTo("") == 0) {
             JOptionPane.showMessageDialog(this, "Mat khau khong de trong!");
             return false;
         }
             return false;
         }
-        if (jTextField2.getText().compareTo("") == 0) {
+        if (jPassword.getText().compareTo("") == 0) {
             JOptionPane.showMessageDialog(this, "Mat khau khong de trong!");
             return false;
         }
@@ -108,10 +108,10 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        tf_UseName = new javax.swing.JTextField();
+        jb_DangNhap = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SIÊU THỊ ĐIỆN MÁY ES5");
@@ -133,40 +133,35 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_password.png"))); // NOI18N
         jLabel4.setOpaque(true);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tf_UseName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                tf_UseNameActionPerformed(evt);
             }
         });
-        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+        tf_UseName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField1KeyPressed(evt);
+                tf_UseNameKeyPressed(evt);
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jb_DangNhap.setBackground(new java.awt.Color(0, 0, 255));
+        jb_DangNhap.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jb_DangNhap.setForeground(new java.awt.Color(255, 255, 255));
+        jb_DangNhap.setText("ĐĂNG NHẬP");
+        jb_DangNhap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jb_DangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextField2KeyPressed(evt);
-            }
-        });
-
-        jButton1.setBackground(new java.awt.Color(0, 0, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("ĐĂNG NHẬP");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jb_DangNhapActionPerformed(evt);
             }
         });
 
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
+
+        jPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -174,19 +169,21 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
+                        .addGap(260, 260, 260))
+                    .addComponent(jb_DangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPassword))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1))
+                        .addComponent(tf_UseName))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,16 +192,16 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_UseName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPassword))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jb_DangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(16, 16, 16))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -225,7 +222,7 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,45 +239,41 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void tf_UseNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_UseNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_tf_UseNameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jb_DangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_DangNhapActionPerformed
         if (kiemTraKiTuNhap()) {
             kiemTraDangNhap();
         } 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jb_DangNhapActionPerformed
 
-    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+    private void tf_UseNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_UseNameKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-            jTextField1.transferFocus();
+            tf_UseName.transferFocus(); 
         }
         if(evt.getKeyCode() == KeyEvent.VK_DOWN){
-            jTextField1.transferFocus();
+            tf_UseName.transferFocus();
         }
         if(evt.getKeyCode() == KeyEvent.VK_ESCAPE){
             System.exit(0);
         }
-    }//GEN-LAST:event_jTextField1KeyPressed
+    }//GEN-LAST:event_tf_UseNameKeyPressed
 
-    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+    private void jPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_UP){
-            jTextField2.transferFocusBackward();
+            jPassword.transferFocusBackward();
         }
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             if (kiemTraKiTuNhap()) {
-            kiemTraDangNhap();
-            } 
+                kiemTraDangNhap();
+            }
         }
         if(evt.getKeyCode() == KeyEvent.VK_ESCAPE){
             System.exit(0);
         }
-    }//GEN-LAST:event_jTextField2KeyPressed
+    }//GEN-LAST:event_jPasswordKeyPressed
 
     /**
      * @param args the command line arguments
@@ -319,7 +312,6 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -327,7 +319,8 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField jPassword;
+    private javax.swing.JButton jb_DangNhap;
+    private javax.swing.JTextField tf_UseName;
     // End of variables declaration//GEN-END:variables
 }
