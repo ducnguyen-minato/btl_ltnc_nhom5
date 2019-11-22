@@ -17,9 +17,9 @@ import java.util.logging.Logger;
  */
 public class KetNoiCSDL {
     private Connection conn;
-    private static final String url       = "jdbc:mysql://localhost/quanlysieuthidienmay?" + "useUnicode=true&characterEncoding=utf-8";
+    private static final String url       = "jdbc:mysql://localhost/quanlysieuthidienmay1?" + "useUnicode=true&characterEncoding=utf-8";
     private static final String user      = "root";
-    private static final String password  = "thinh011098";
+    private static final String password  = "123456";
     
     public KetNoiCSDL(){
         try {
