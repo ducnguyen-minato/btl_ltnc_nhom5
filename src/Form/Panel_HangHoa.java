@@ -89,7 +89,7 @@ public class Panel_HangHoa extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(10, 10, 720, 400);
+        jScrollPane1.setBounds(20, 20, 720, 400);
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 153));
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N

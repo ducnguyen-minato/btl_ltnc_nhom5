@@ -7,7 +7,6 @@ package GiaoDienNguoiDung;
 
 
 
-import DoiTuong.NhanVien;
 import Form.Panel_BaoCao;
 import Form.Panel_HoaDon;
 import Form.Panel_HoaDonBanHang;
@@ -15,15 +14,14 @@ import Form.Panel_HoaDonNhapHang;
 import Form.Panel_HangHoa;
 import Form.Panel_KhachHang;
 import Form.Panel_NhaCungCap;
+
 import Form.Panel_NhapKho;
 import Form.Panel_QuanTri;
 import Form.Panel_TaiKhoan;
 import Form.Panel_ThongKe;
-import Form.Panel_TimKiem;
+
 import Form.Panel_TroGiup;
 import java.awt.Component;
-import java.awt.PopupMenu;
-import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -42,7 +40,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     public static Panel_ThongKe pn_ThongKe = new Panel_ThongKe();
     public static Panel_BaoCao pn_BaoCao = new Panel_BaoCao();
     public static Panel_QuanTri pn_QuanTri = new Panel_QuanTri();
-    public static Panel_TimKiem pn_TimKiem = new Panel_TimKiem();
+ //   public static Panel_TimKiem pn_TimKiem = new Panel_TimKiem();
     public static Panel_TroGiup pn_TroGiup = new Panel_TroGiup();
     public static Panel_TaiKhoan pn_TaiKhoan = new Panel_TaiKhoan();
     
@@ -65,7 +63,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         pn_ThongKe.setVisible(false);
         pn_BaoCao.setVisible(false);
         pn_QuanTri.setVisible(false);
-        pn_TimKiem.setVisible(false);
+ //       pn_TimKiem.setVisible(false);
         pn_TroGiup.setVisible(false);
         pn_TaiKhoan.setVisible(false);
         
@@ -428,14 +426,17 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panel_main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panel_main, javax.swing.GroupLayout.PREFERRED_SIZE, 1300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panel_main, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE))
+                .addComponent(panel_main, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -593,12 +594,13 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         }
         panel_main.add(pn_HangHoa);
         panel_main.add(pn_KhachHang);
+        
         panel_main.add(pn_NhapKho);
         panel_main.add(pn_NhaCungCap);
         panel_main.add(pn_ThongKe);
         panel_main.add(pn_BaoCao);
         panel_main.add(pn_QuanTri);
-        panel_main.add(pn_TimKiem);
+    //    panel_main.add(pn_TimKiem);
         panel_main.add(pn_TroGiup);
         panel_main.add(pn_TaiKhoan);
         
@@ -609,7 +611,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         pn_ThongKe.setVisible(false);
         pn_BaoCao.setVisible(false);
         pn_QuanTri.setVisible(false);
-        pn_TimKiem.setVisible(false);
+     //   pn_TimKiem.setVisible(false);
         pn_TroGiup.setVisible(false);
         pn_TaiKhoan.setVisible(false);
     }
