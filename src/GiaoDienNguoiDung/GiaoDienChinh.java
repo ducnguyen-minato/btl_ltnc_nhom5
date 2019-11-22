@@ -595,7 +595,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         }
         panel_main.add(pn_HangHoa);
         panel_main.add(pn_KhachHang);
-        
+        panel_main.add(pn_HoaDon);
         panel_main.add(pn_NhapKho);
         panel_main.add(pn_NhaCungCap);
         panel_main.add(pn_ThongKe);

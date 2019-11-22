@@ -54,7 +54,7 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
                 rs_MaNV.next();
                 String maNV = rs_MaNV.getString(1);
                     //Lấy data trong bảng nhân viên từ mã nhân viên có được:
-                    String sqlLayNhanVien = "SELECT * FROM nhanvien WHERE manhanvien = '" + maNV + "'";
+                    String sqlLayNhanVien = "SELECT * FROM nhanvien WHERE MaNV = '" + maNV + "'";
                     ResultSet rs_NhanVien = stmt.executeQuery(sqlLayNhanVien);
                     rs_NhanVien.next();
                     Main.nhanvien = new NhanVien(rs_NhanVien.getString(1), rs_NhanVien.getString(2), 
