@@ -208,8 +208,12 @@ public class Panel_KhachHang extends javax.swing.JPanel {
         txtNgaySinh.setText(model.getValueAt(i,2).toString());
         txtSDT.setText(model.getValueAt(i,3).toString());
         txtDiaChi.setText(model.getValueAt(i,5).toString());
+        txtTongTien.setText(model.getValueAt(i,6).toString());
         String gtinh = model.getValueAt(i,4).toString();
         if(gtinh.equals("Nam")){
+            
+            
+            
             jrNam.setSelected(true);
         }
         else{
