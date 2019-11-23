@@ -12,21 +12,24 @@ package DoiTuong;
 public class Nguoi {
     private String id;
     private String name;
-    private String ngaySinh;
-    private String soDienThoai;
-    private String gioiTinh;
     private String diaChi;
+    private String soDienThoai;
+    private String email;
+    private String ghiChu;
+
+    
+   
     
     
     //Ham Tao
 
-    public Nguoi(String id, String name, String ngaySinh, String soDienThoai, String gioiTinh, String diaChi) {
+    public Nguoi(String id, String name, String soDienThoai, String diaChi,String email, String ghiChu) {
         this.id = id;
         this.name = name;
-        this.ngaySinh = ngaySinh;
         this.soDienThoai = soDienThoai;
-        this.gioiTinh = gioiTinh;
         this.diaChi = diaChi;
+        this.email = email;
+        this.ghiChu = ghiChu;
     }
 
     public String getId() {
@@ -43,16 +46,7 @@ public class Nguoi {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getNgaySinh() {
-        return ngaySinh;
-    }
-
-    public void setNgaySinh(String ngaySinh) {
-        this.ngaySinh = ngaySinh;
-    }
-
+    }  
     public String getSoDienThoai() {
         return soDienThoai;
     }
@@ -60,15 +54,6 @@ public class Nguoi {
     public void setSoDienThoai(String soDienThoai) {
         this.soDienThoai = soDienThoai;
     }
-
-    public String getGioiTinh() {
-        return gioiTinh;
-    }
-
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
-    }
-
     public String getDiaChi() {
         return diaChi;
     }
@@ -76,5 +61,21 @@ public class Nguoi {
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
     }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getGhiChu() {
+        return ghiChu;
+    }
+
+    public void setGhiChu(String ghiChu) {
+        this.ghiChu = ghiChu;
+    }
+    
     
 }

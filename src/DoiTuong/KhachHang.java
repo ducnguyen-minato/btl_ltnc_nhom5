@@ -7,24 +7,30 @@ package DoiTuong;
 
 /**
  *
- * @author Dinh Duc
+ * @author Dat Tran
  */
 public class KhachHang extends Nguoi{
-    private Double tongTien;
-
-    public KhachHang(String id, String name, String ngaySinh, String soDienThoai, String gioiTinh, String diaChi, Double tongTien) {
-        super(id, name, ngaySinh, soDienThoai, gioiTinh, diaChi);
+    private double tongTien;
+    private String loaiKhachHang;
+    public KhachHang(String id, String name, String diaChi, String soDienThoai, String email,double tongTien, String loaiKhachHang, String ghiChu) {
+        super(id, name, soDienThoai, diaChi, email, ghiChu);
         this.tongTien = tongTien;
+        this.loaiKhachHang = loaiKhachHang;
     }
-
-    public Double getTongTien() {
+    public double getTongTien() {
         return tongTien;
     }
 
-    public void setTongTien(Double tongTien) {
+    public void setTongTien(double tongTien) {
         this.tongTien = tongTien;
     }
 
-    
-    
+    public String getLoaiKhachHang() {
+        return loaiKhachHang;
+    }
+
+    public void setLoaiKhachHang(String loaiKhachHang) {
+        this.loaiKhachHang = loaiKhachHang;
+    }
 }
+   

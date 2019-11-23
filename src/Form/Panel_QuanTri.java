@@ -44,10 +44,10 @@ public class Panel_QuanTri extends javax.swing.JPanel {
               statement = conn.createStatement();
               result = statement.executeQuery(query);
               while(result.next()){
-                  nhanVien = new NhanVien(result.getString(1), result.getString(2), 
-                            result.getString(3), result.getString(4), result.getString(5), 
-                            result.getString(6), result.getString(7), result.getString(8), 
-                            result.getString(9), result.getString(10));
+                  nhanVien = new NhanVien(result.getString(1),result.getString(2),
+                          result.getString(3),result.getString(4),result.getString(5)
+                          ,result.getString(6),result.getString(7),
+                          result.getString(8),result.getString(9));
                   nhanVienList.add(nhanVien);          
               }       
         } 
@@ -65,11 +65,11 @@ public class Panel_QuanTri extends javax.swing.JPanel {
         for(int i =0; i < list.size();i++){
             row[0] = list.get(i).getId();
             row[1] = list.get(i).getName();
-            row[2] = list.get(i).getNgaySinh();
-            row[3] = list.get(i).getSoDienThoai();
-            row[4] = list.get(i).getGioiTinh();
+            row[2] = list.get(i).getChucVu();
+            row[3] = list.get(i).getGioiTinh();
+            row[4] = list.get(i).getNgaySinh();
             row[5] = list.get(i).getDiaChi();
-            row[6] = list.get(i).getChucVu();
+            row[6] = list.get(i).getSoDienThoai();
             row[7] = list.get(i).getEmail();
             row[8] = list.get(i).getGhiChu();
             dfTableNV.addRow(row);
@@ -114,7 +114,6 @@ public class Panel_QuanTri extends javax.swing.JPanel {
     private void clear() {                                            
        txtMaNV.setText("");
        txtHoTen.setText("");
-       jrNam.setSelected(true);
        txtNgaySinh.setText("");
        txtDiaChi.setText("");
        txtSoDT.setText("");
@@ -131,27 +130,27 @@ public class Panel_QuanTri extends javax.swing.JPanel {
             gioiTinh ="Nữ";
         }
 
-             String sql = "update nhanvien set manhanvien ='"+txtMaNV.getText()+"', "
-                     + "hoten = '"+txtHoTen.getText()+"',chucvu = '"+cbChucVu.getSelectedItem().toString()+"',gioitinh='"+gioiTinh+"',"
-                     + "ngaysinh='"+txtNgaySinh.getText()+"',"
-                     + "diachi='"+txtDiaChi.getText()+"',"
-                     + "sodienthoai='"+txtSoDT.getText()+"',"
-                     + "email='"+txtEmail.getText()+"',"
-                     + "ghiChu='"+txtghiChu.getText()+"' "
-                     + "where manhanvien ='"+txtMaNV.getText()+"'";
+             String sql = "update nhanvien set MaNV ='"+txtMaNV.getText()+"', "
+                     + "TenNV = '"+txtHoTen.getText()+"',ChucVu = '"+cbChucVu.getSelectedItem().toString()+"',GioiTinh='"+gioiTinh+"',"
+                     + "NgaySinh='"+txtNgaySinh.getText()+"',"
+                     + "DiaChi='"+txtDiaChi.getText()+"',"
+                     + "SDT='"+txtSoDT.getText()+"',"
+                     + "Email='"+txtEmail.getText()+"',"
+                     + "GhiChu='"+txtghiChu.getText()+"' "
+                     + "where MaNV ='"+txtMaNV.getText()+"'";
            
             thucHienTruyVan(sql,"Sửa");
             clear();
     }
     private void xuLyXoa(){       
-            String sql = "delete from nhanvien where manhanvien ='"+txtMaNV.getText()+"'";
+            String sql = "delete from nhanvien where MaNV ='"+txtMaNV.getText()+"'";
             thucHienTruyVan(sql,"Xóa");
             clear();
     }
     private void searchNV() {
        String lenhTim = txtSearch.getText();
-       String query1 = "select * from quanlysieuthi.nhanvien where manhanvien like '%"+lenhTim+"%'"
-               + "or hoten like '%"+lenhTim+"%' or chucvu like '%"+lenhTim+"%'or sodienthoai like '%"+lenhTim+"%'";
+       String query1 = "select * from quanlysieuthidienmay.nhanvien where MaNV like '%"+lenhTim+"%'"
+               + "or TenNV like '%"+lenhTim+"%' or ChucVu like '%"+lenhTim+"%'or SDT like '%"+lenhTim+"%'";
        try{
            conn = kn.getConn();
            statement = conn.createStatement();      
@@ -181,23 +180,23 @@ public class Panel_QuanTri extends javax.swing.JPanel {
         int col = 0;
        
         while (rs1.next()) {
-            BangNhanVien.setValueAt(rs1.getString("manhanvien"), row, col);
+            BangNhanVien.setValueAt(rs1.getString(1), row, col);
             col++;
-            BangNhanVien.setValueAt(rs1.getString("hoten"), row, col);
+            BangNhanVien.setValueAt(rs1.getString(2), row, col);
             col++;
-            BangNhanVien.setValueAt(rs1.getString("chucvu"), row, col);
+            BangNhanVien.setValueAt(rs1.getString(3), row, col);
             col++;
-            BangNhanVien.setValueAt(rs1.getString("gioitinh"), row, col);
+            BangNhanVien.setValueAt(rs1.getString(4), row, col);
             col++;
-            BangNhanVien.setValueAt(rs1.getString("ngaysinh"), row, col);
+            BangNhanVien.setValueAt(rs1.getString(5), row, col);
             col++;
-            BangNhanVien.setValueAt(rs1.getString("diachi"), row, col);
+            BangNhanVien.setValueAt(rs1.getString(6), row, col);
             col++;
-            BangNhanVien.setValueAt(rs1.getString("sodienthoai"), row, col);
+            BangNhanVien.setValueAt(rs1.getString(7), row, col);
             col++;
-            BangNhanVien.setValueAt(rs1.getString("email"), row, col);
+            BangNhanVien.setValueAt(rs1.getString(8), row, col);
             col++;
-            BangNhanVien.setValueAt(rs1.getString("ghichu"), row, col);
+            BangNhanVien.setValueAt(rs1.getString(9), row, col);
             col++;
           
         }
@@ -257,7 +256,7 @@ public class Panel_QuanTri extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        cbChucVu = new javax.swing.JComboBox<String>();
+        cbChucVu = new javax.swing.JComboBox<>();
         txtMaNV = new javax.swing.JTextField();
         txtHoTen = new javax.swing.JTextField();
         jrNam = new javax.swing.JRadioButton();
@@ -354,7 +353,7 @@ public class Panel_QuanTri extends javax.swing.JPanel {
         jLabel10.setForeground(new java.awt.Color(102, 102, 255));
         jLabel10.setText("Ghi chú");
 
-        cbChucVu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nhân viên bán hàng", "Thủ kho", "Giám đốc" }));
+        cbChucVu.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhân viên bán hàng", "Thủ kho", "Giám đốc" }));
 
         buttonGroup1.add(jrNam);
         jrNam.setText("Nam");
@@ -608,7 +607,7 @@ public class Panel_QuanTri extends javax.swing.JPanel {
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(24, 24, 24))
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 11, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

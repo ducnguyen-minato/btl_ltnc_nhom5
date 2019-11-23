@@ -7,20 +7,70 @@ package DoiTuong;
 
 /**
  *
- * @author Dinh Duc
+ * @author Dat Tran
  */
 public class NhanVien extends Nguoi{
     private String chucVu;
+    private String gioiTinh;
+    private String ngaySinh;
+
+    
+    public NhanVien(String id, String name, String chucVu,String gioiTinh, String ngaySinh, String diaChi, String soDienThoai,  String email, String ghiChu) {
+        super(id, name,soDienThoai,  diaChi, email, ghiChu);       
+        this.chucVu = chucVu;
+        this.gioiTinh = gioiTinh;
+        this.ngaySinh = ngaySinh;
+    }
+    public String getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(String gioiTinh) {
+        this.gioiTinh = gioiTinh;
+    }
+
+    public String getNgaySinh() {
+        return ngaySinh;
+    }
+
+    public void setNgaySinh(String ngaySinh) {
+        this.ngaySinh = ngaySinh;
+    }
+
+    public String getChucVu() {
+        return chucVu;
+    }
+
+    public void setChucVu(String chucVu) {
+        this.chucVu = chucVu;
+    }
+    
+    
+}
+ /*   private String maNhanVien;
+    private String tenNhanVien;
+    private String chucVu;
+    private String gioiTinh;
+    private String ngaySinh;
+    private String diaChi;
+    private String soDT;
     private String email;
-    private String anh_Path;
     private String ghiChu;
 
-    public NhanVien(String id, String name, String ngaySinh, String soDienThoai, String gioiTinh, String diaChi, String chucVu, String email, String anh_Path, String ghiChu) {
-        super(id, name, ngaySinh, soDienThoai, gioiTinh, diaChi);
-        this.chucVu = chucVu;
-        this.email = email;
-        this.anh_Path = anh_Path;
-        this.ghiChu = ghiChu;
+    public String getMaNhanVien() {
+        return maNhanVien;
+    }
+
+    public void setMaNhanVien(String maNhanVien) {
+        this.maNhanVien = maNhanVien;
+    }
+
+    public String getTenNhanVien() {
+        return tenNhanVien;
+    }
+
+    public void setTenNhanVien(String tenNhanVien) {
+        this.tenNhanVien = tenNhanVien;
     }
 
     public String getChucVu() {
@@ -31,20 +81,44 @@ public class NhanVien extends Nguoi{
         this.chucVu = chucVu;
     }
 
+    public String getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(String gioiTinh) {
+        this.gioiTinh = gioiTinh;
+    }
+
+    public String getNgaySinh() {
+        return ngaySinh;
+    }
+
+    public void setNgaySinh(String ngaySinh) {
+        this.ngaySinh = ngaySinh;
+    }
+
+    public String getDiaChi() {
+        return diaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
+    }
+
+    public String getSoDT() {
+        return soDT;
+    }
+
+    public void setSoDT(String soDT) {
+        this.soDT = soDT;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getAnh_Path() {
-        return anh_Path;
-    }
-
-    public void setAnh_Path(String anh_Path) {
-        this.anh_Path = anh_Path;
     }
 
     public String getGhiChu() {
@@ -54,9 +128,22 @@ public class NhanVien extends Nguoi{
     public void setGhiChu(String ghiChu) {
         this.ghiChu = ghiChu;
     }
+    public NhanVien(String maNV,String tenNV,String chucVu,String gioiTinh,
+            String ngaySinh,String diaChi,String soDT, String email, String ghiChu){
+    this.maNhanVien = maNV;
+    this.tenNhanVien = tenNV;
+    this.chucVu = chucVu;
+    this.gioiTinh = gioiTinh;
+    this.ngaySinh = ngaySinh;
+    this.diaChi = diaChi;
+    this.soDT = soDT;
+    this.email = email;
+    this.ghiChu = ghiChu;
+    }
+
+    @Override
+    public String toString() {
+        return maNhanVien; //To change body of generated methods, choose Tools | Templates.
+    }
     
-    
-    
-    
-    
-}
+}*/

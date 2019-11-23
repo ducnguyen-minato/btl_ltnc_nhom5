@@ -5,7 +5,7 @@
  */
 package Form;
 
-
+import DoiTuong.NhaCungCap;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,7 +28,7 @@ public class Panel_NhaCungCap extends javax.swing.JPanel {
     public static Connection conn = null;
     public static Statement statement = null;
     public static ResultSet result;
-    ketnoicsdl.KetNoiCSDL kn = new KetNoiCSDL() ;
+    ketnoicsdl.KetNoiCSDL kn = new KetNoiCSDL();
     NhaCungCap nhaCungCap;
     DefaultTableModel model;
     public Panel_NhaCungCap() {
@@ -44,8 +44,8 @@ public class Panel_NhaCungCap extends javax.swing.JPanel {
             statement = conn.createStatement();
             result = statement.executeQuery(query);
             while(result.next()){
-                nhaCungCap = new NhaCungCap(result.getInt("manhacungcap"),result.getString("tennhacungcap")
-                        ,result.getString("diachi"),result.getString("sodienthoai"),result.getString("email"),result.getString("ghichu"));
+                nhaCungCap = new NhaCungCap(result.getString(1),result.getString(2),
+                        result.getString(3),result.getString(4),result.getString(5),result.getString(6));
                 nhaCungCapList.add(nhaCungCap);
             }
           
@@ -59,8 +59,8 @@ public class Panel_NhaCungCap extends javax.swing.JPanel {
         model = (DefaultTableModel) BangNCC.getModel();
         Object[] row = new Object[6];
         for(int i=0; i < list.size();i++){
-            row[0] = list.get(i).getMaNhacungCap();
-            row[1] = list.get(i).getTenNhaCungCap();
+            row[0] = list.get(i).getId();
+            row[1] = list.get(i).getName();
             row[2] = list.get(i).getDiaChi();
             row[3] = list.get(i).getSoDienThoai();
             row[4] = list.get(i).getEmail();
@@ -102,30 +102,28 @@ public class Panel_NhaCungCap extends javax.swing.JPanel {
         txtGhiChu.setText(tbmodel.getValueAt(i, 5).toString());
     }
     private void Them(){
-        int maNCC = Integer.parseInt(txtMaNCC.getText());
-        String query = "insert into nhacungcap values('"+maNCC+"','"+txtTenNCC.getText()+"',"
+        String query = "insert into nhacungcap values('"+txtMaNCC.getText()+"','"+txtTenNCC.getText()+"',"
                 + "'"+txtDiaChi.getText()+"','"+txtSoDT.getText()+"',"
                 + "'"+txtEmail.getText()+"','"+txtGhiChu.getText()+"')";
         ThucHienTruyVan(query, "Them");
         Clear();
     }
     private void Sua(){
-        int maNCC = Integer.parseInt(txtMaNCC.getText());
-        String query = "update nhacungcap set manhacungcap = '"+maNCC+"', tennhacungcap ='"+txtTenNCC.getText()+"',diachi = '"+txtDiaChi.getText()+"',"
-                + "sodienthoai='"+txtSoDT.getText()+"',email ='"+txtEmail.getText()+"',ghichu='"+txtGhiChu.getText()+"' where manhacungcap = '"+txtMaNCC.getText()+"'";
+        String query = "update nhacungcap set MaNCC = '"+txtMaNCC.getText()+"', TenNCC ='"+txtTenNCC.getText()+"',DiaChi = '"+txtDiaChi.getText()+"',"
+                + "SDT='"+txtSoDT.getText()+"',Email ='"+txtEmail.getText()+"',GhiChu='"+txtGhiChu.getText()+"' where MaNCC = '"+txtMaNCC.getText()+"'";
         ThucHienTruyVan(query, "Sua");
         Clear();
         
     }
     private void Xoa(){
-        String query = "delete from nhacungcap where manhacungcap = '"+txtMaNCC.getText()+"'";
+        String query = "delete from nhacungcap where MaNCC = '"+txtMaNCC.getText()+"'";
         ThucHienTruyVan(query,"Xoa");
         Clear();
         
     }
     private void TimKiem(){
         String lenh = txtTimKiem.getText();
-        String query = "select * from quanlysieuthi.nhacungcap where manhacungcap like '%"+lenh+"'or tennhacungcap like '%"+lenh+"'";
+        String query = "select * from quanlysieuthidienmay.nhacungcap where MaNCC like '%"+lenh+"'or TenNCC like '%"+lenh+"'";
         try{
             conn = kn.getConn();
             statement = conn.createStatement();
@@ -153,12 +151,12 @@ public class Panel_NhaCungCap extends javax.swing.JPanel {
         int col = 0;
         int row = 0;
         while(rs.next()){
-            BangNCC.setValueAt(rs.getInt("manhacungcap"), row, col); col++;
-            BangNCC.setValueAt(rs.getString("tennhacungcap"), row, col); col++;
-            BangNCC.setValueAt(rs.getString("diachi"), row, col); col++;
-            BangNCC.setValueAt(rs.getString("sodienthoai"), row, col); col++;
-            BangNCC.setValueAt(rs.getString("email"), row, col); col++;
-            BangNCC.setValueAt(rs.getString("ghichu"), row, col); col++;
+            BangNCC.setValueAt(rs.getString(1), row, col); col++;
+            BangNCC.setValueAt(rs.getString(2), row, col); col++;
+            BangNCC.setValueAt(rs.getString(3), row, col); col++;
+            BangNCC.setValueAt(rs.getString(4), row, col); col++;
+            BangNCC.setValueAt(rs.getString(5), row, col); col++;
+            BangNCC.setValueAt(rs.getString(6), row, col); col++;
             
         }
    
@@ -211,7 +209,7 @@ public class Panel_NhaCungCap extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1300, 650));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1300, 630));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -497,7 +495,7 @@ public class Panel_NhaCungCap extends javax.swing.JPanel {
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 68, Short.MAX_VALUE))
+                .addGap(0, 48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
