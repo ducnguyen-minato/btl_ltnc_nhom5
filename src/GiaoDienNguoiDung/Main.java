@@ -15,7 +15,7 @@ import DoiTuong.NhanVien;
 public class Main {
     // Tạo đối tượng tĩnh là 1 nhân viên hiện tại đang dùng là ai dựa vào tài khoản đăng nhập
     public static NhanVien nhanvien;
-
+    public static KhachHang khachHang;
     /**
      * @param args the command line arguments
      */

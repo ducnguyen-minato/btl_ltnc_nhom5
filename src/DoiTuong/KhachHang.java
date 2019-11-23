@@ -10,18 +10,18 @@ package DoiTuong;
  * @author Dinh Duc
  */
 public class KhachHang extends Nguoi{
-    private int tongTien;
+    private Double tongTien;
 
-    public KhachHang(String id, String name, String ngaySinh, String soDienThoai, String gioiTinh, String diaChi, int tongTien) {
+    public KhachHang(String id, String name, String ngaySinh, String soDienThoai, String gioiTinh, String diaChi, Double tongTien) {
         super(id, name, ngaySinh, soDienThoai, gioiTinh, diaChi);
         this.tongTien = tongTien;
     }
 
-    public int getTongTien() {
+    public Double getTongTien() {
         return tongTien;
     }
 
-    public void setTongTien(int tongTien) {
+    public void setTongTien(Double tongTien) {
         this.tongTien = tongTien;
     }
 

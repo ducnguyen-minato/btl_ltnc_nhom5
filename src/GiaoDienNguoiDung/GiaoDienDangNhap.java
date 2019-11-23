@@ -248,7 +248,7 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
             kiemTraDangNhap();
         } 
     }//GEN-LAST:event_jb_DangNhapActionPerformed
-
+// xử lý nút bấm Phan Văn Thịnh 15-11-2019
     private void tf_UseNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_UseNameKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             tf_UseName.transferFocus();       

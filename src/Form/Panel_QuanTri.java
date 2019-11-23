@@ -114,6 +114,7 @@ public class Panel_QuanTri extends javax.swing.JPanel {
     private void clear() {                                            
        txtMaNV.setText("");
        txtHoTen.setText("");
+       jrNam.setSelected(true);
        txtNgaySinh.setText("");
        txtDiaChi.setText("");
        txtSoDT.setText("");
