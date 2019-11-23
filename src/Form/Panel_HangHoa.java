@@ -39,7 +39,6 @@ public class Panel_HangHoa extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -55,6 +54,7 @@ public class Panel_HangHoa extends javax.swing.JPanel {
         jButton7 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 0));
         setForeground(new java.awt.Color(255, 51, 0));
@@ -146,21 +146,9 @@ public class Panel_HangHoa extends javax.swing.JPanel {
         add(jTextField6);
         jTextField6.setBounds(890, 180, 283, 30);
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 51, 204));
-        jButton1.setText("Thoát");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1);
-        jButton1.setBounds(640, 510, 90, 50);
-
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 51, 204));
-        jButton2.setText("Lưu");
+        jButton2.setText("Làm mới");
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,11 +156,11 @@ public class Panel_HangHoa extends javax.swing.JPanel {
             }
         });
         add(jButton2);
-        jButton2.setBounds(510, 510, 90, 50);
+        jButton2.setBounds(650, 510, 80, 50);
 
-        jButton3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 51, 204));
-        jButton3.setText("Xóa");
+        jButton3.setText("Thêm");
         jButton3.setBorder(null);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,10 +172,10 @@ public class Panel_HangHoa extends javax.swing.JPanel {
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(0, 51, 204));
-        jButton4.setText("Làm mới");
+        jButton4.setText("Xóa");
         jButton4.setBorder(null);
         add(jButton4);
-        jButton4.setBounds(260, 510, 90, 50);
+        jButton4.setBounds(330, 510, 90, 50);
 
         jButton5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(0, 51, 204));
@@ -199,7 +187,7 @@ public class Panel_HangHoa extends javax.swing.JPanel {
             }
         });
         add(jButton5);
-        jButton5.setBounds(130, 510, 90, 50);
+        jButton5.setBounds(170, 510, 90, 50);
 
         jTextField7.setForeground(new java.awt.Color(0, 51, 204));
         jTextField7.setBorder(null);
@@ -231,7 +219,7 @@ public class Panel_HangHoa extends javax.swing.JPanel {
         jButton6.setText("In");
         jButton6.setBorder(null);
         add(jButton6);
-        jButton6.setBounds(390, 510, 90, 50);
+        jButton6.setBounds(490, 510, 90, 50);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 204));
@@ -242,7 +230,7 @@ public class Panel_HangHoa extends javax.swing.JPanel {
         jTextField1.setBounds(230, 440, 260, 40);
 
         jButton7.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(0, 0, 204));
+        jButton7.setForeground(new java.awt.Color(0, 51, 204));
         jButton7.setText("Tìm");
         jButton7.setBorder(null);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -257,22 +245,24 @@ public class Panel_HangHoa extends javax.swing.JPanel {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_hanghoa.png"))); // NOI18N
         add(jLabel9);
-        jLabel9.setBounds(880, 410, 260, 170);
+        jLabel9.setBounds(900, 420, 260, 150);
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 2, 13)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 0, 0));
         jLabel10.setText("Hình ảnh hàng hóa:");
         add(jLabel10);
-        jLabel10.setBounds(950, 380, 110, 16);
+        jLabel10.setBounds(980, 570, 110, 16);
+
+        jButton8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(0, 0, 204));
+        jButton8.setText("Clear");
+        add(jButton8);
+        jButton8.setBounds(960, 380, 140, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -288,13 +278,13 @@ public class Panel_HangHoa extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
