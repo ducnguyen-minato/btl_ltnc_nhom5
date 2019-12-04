@@ -6,12 +6,18 @@
 package Form;
 
 import DoiTuong.NhaCungCap;
+import java.awt.print.PrinterException;
+import java.io.PrintStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import ketnoicsdl.KetNoiCSDL;
@@ -362,6 +368,11 @@ public class Panel_NhaCungCap extends javax.swing.JPanel {
         btnIn.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnIn.setForeground(new java.awt.Color(0, 51, 255));
         btnIn.setText("In");
+        btnIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInActionPerformed(evt);
+            }
+        });
 
         btnSua.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnSua.setForeground(new java.awt.Color(0, 51, 255));
@@ -550,6 +561,17 @@ public class Panel_NhaCungCap extends javax.swing.JPanel {
         // TODO add your handling code here:
         Sua();
     }//GEN-LAST:event_btnSuaActionPerformed
+
+    private void btnInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInActionPerformed
+       
+        MessageFormat header = new MessageFormat("BẢNG NHÀ CUNG CẤP");
+        MessageFormat footer = new MessageFormat("Page{0,number,integer}");
+            try {
+                BangNCC.print(JTable.PrintMode.NORMAL,header,footer);
+            } catch (PrinterException ex) {
+       
+            }
+    }//GEN-LAST:event_btnInActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

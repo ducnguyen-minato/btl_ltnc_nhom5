@@ -13,13 +13,17 @@ public class NhanVien extends Nguoi{
     private String chucVu;
     private String gioiTinh;
     private String ngaySinh;
+    private byte[] anhNV;
+
+   
 
     
-    public NhanVien(String id, String name, String chucVu,String gioiTinh, String ngaySinh, String diaChi, String soDienThoai,  String email, String ghiChu) {
+    public NhanVien(String id, String name, String chucVu,String gioiTinh, String ngaySinh, String diaChi, String soDienThoai,  String email, String ghiChu,byte[] anhNV) {
         super(id, name,soDienThoai,  diaChi, email, ghiChu);       
         this.chucVu = chucVu;
         this.gioiTinh = gioiTinh;
         this.ngaySinh = ngaySinh;
+        this.anhNV = anhNV;
     }
     public String getGioiTinh() {
         return gioiTinh;
@@ -44,7 +48,13 @@ public class NhanVien extends Nguoi{
     public void setChucVu(String chucVu) {
         this.chucVu = chucVu;
     }
-    
+     public byte[] getAnhNV() {
+        return anhNV;
+    }
+
+    public void setAnhNV(byte[] anhNV) {
+        this.anhNV = anhNV;
+    }
     
 }
  /*   private String maNhanVien;

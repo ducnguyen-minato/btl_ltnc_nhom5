@@ -20,7 +20,7 @@ import ketnoicsdl.KetNoiCSDL;
  * @author Dinh Duc
  */
 public class GiaoDienDangNhap extends javax.swing.JFrame {
-    private String taiKhoan;
+    private  String taiKhoan ;
     private String matKhau;
     /**
      * Creates new form GiaoDienDangNhap
@@ -30,7 +30,10 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
         taiKhoan = "";
         matKhau = "";
     }
-
+ public String layTaiKhoan(){
+        taiKhoan = tf_UseName.getText();
+        return taiKhoan;
+    }
     public void kiemTraDangNhap () {
         taiKhoan = tf_UseName.getText();
         matKhau = jPassword.getText();
@@ -60,7 +63,7 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
                     Main.nhanvien = new NhanVien(rs_NhanVien.getString(1), rs_NhanVien.getString(2), 
                             rs_NhanVien.getString(3), rs_NhanVien.getString(4), rs_NhanVien.getString(5), 
                             rs_NhanVien.getString(6), rs_NhanVien.getString(7), rs_NhanVien.getString(8), 
-                            rs_NhanVien.getString(9), rs_NhanVien.getString(10));
+                            rs_NhanVien.getString(9),rs_NhanVien.getBytes(10));
                 System.out.println(Main.nhanvien.getName());
                 // Mở giao diện chính
                 GiaoDienChinh gdChinh = new GiaoDienChinh();
@@ -275,33 +278,9 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jPasswordKeyPressed
 
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GiaoDienDangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GiaoDienDangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GiaoDienDangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GiaoDienDangNhap.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+       
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -310,6 +289,7 @@ public class GiaoDienDangNhap extends javax.swing.JFrame {
             }
         });
     }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
