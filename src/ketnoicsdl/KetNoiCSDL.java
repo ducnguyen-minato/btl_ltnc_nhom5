@@ -19,7 +19,7 @@ public class KetNoiCSDL {
     private Connection conn;
     private static final String url       = "jdbc:mysql://localhost/quanlysieuthidienmay?" + "useUnicode=true&characterEncoding=utf-8";
     private static final String user      = "root";
-    private static final String password  = "phu12345";
+    private static final String password  = "ngocdan!!";
     
     public KetNoiCSDL(){
         try {
