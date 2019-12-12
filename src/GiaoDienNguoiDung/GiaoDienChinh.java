@@ -18,6 +18,8 @@ import Form.Panel_NhaCungCap;
 import Form.Panel_NhapKho;
 import Form.Panel_QuanTri;
 import Form.Panel_TaiKhoan;
+
+
 import Form.Panel_ThongKe;
 import Form.Panel_TimKiem;
 
@@ -31,6 +33,7 @@ import javax.swing.JOptionPane;
  * @author Dinh Duc
  */
 public class GiaoDienChinh extends javax.swing.JFrame {
+    public  String a = null;
     public static Panel_HoaDonBanHang pn_HoaDonBanHang = new Panel_HoaDonBanHang();     //Dành cho Nhân viên bán hàng
     public static Panel_HoaDonNhapHang pn_HoaDonNhapHang= new Panel_HoaDonNhapHang();   //Dành cho Thủ kho
     public static Panel_HoaDon pn_HoaDon = new Panel_HoaDon();                          //Dành cho Giám đốc (hiển thị cả 2)
@@ -44,16 +47,18 @@ public class GiaoDienChinh extends javax.swing.JFrame {
     public static Panel_TimKiem pn_TimKiem = new Panel_TimKiem();
     public static Panel_TroGiup pn_TroGiup = new Panel_TroGiup();
     public static Panel_TaiKhoan pn_TaiKhoan = new Panel_TaiKhoan();
-    
-    
-    
+
+
 
     /**
      * Creates new form GiaoDienChinh
      */
     public GiaoDienChinh() {
+        
         initComponents();
+        
         // ẩn hết Panel
+              
         pn_HoaDon.setVisible(false);
         pn_HoaDonBanHang.setVisible(false);
         pn_HoaDonNhapHang.setVisible(false);
@@ -67,7 +72,8 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         pn_TimKiem.setVisible(false);
         pn_TroGiup.setVisible(false);
         pn_TaiKhoan.setVisible(false);
-        
+      
+        pn_TaiKhoan.gdc= this;
         
         // Phân quyền để hiển thị
         HamPhanQuyen(Main.nhanvien.getChucVu());        
@@ -421,6 +427,7 @@ public class GiaoDienChinh extends javax.swing.JFrame {
         Panel_ChucNangNhanVien.getAccessibleContext().setAccessibleName("");
 
         panel_main.setAutoscrolls(true);
+        panel_main.setPreferredSize(new java.awt.Dimension(1300, 650));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -529,11 +536,15 @@ public class GiaoDienChinh extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(GiaoDienChinh.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GiaoDienChinh().setVisible(true);
+                
             }
         });
     }
@@ -593,9 +604,9 @@ public class GiaoDienChinh extends javax.swing.JFrame {
                 panel_main.add(pn_HoaDonBanHang);
                 break;
         }
-        panel_main.add(pn_HoaDon);
         panel_main.add(pn_HangHoa);
         panel_main.add(pn_KhachHang);
+        
         panel_main.add(pn_NhapKho);
         panel_main.add(pn_NhaCungCap);
         panel_main.add(pn_ThongKe);

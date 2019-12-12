@@ -9,19 +9,26 @@ package DoiTuong;
  *
  * @author Dat Tran
  */
-public class NhaCungCap {
-  private int maNhacungCap;
+public class NhaCungCap extends Nguoi{
+    
+    public NhaCungCap(String id, String name,String diaChi,   String soDienThoai, String email, String ghiChu) {
+        super(id, name, soDienThoai, diaChi, email, ghiChu);
+    }
+    
+    
+}
+/*  private String maNhacungCap;
   private String tenNhaCungCap;
   private String diaChi;
   private String soDienThoai;
   private String email;
   private String ghiChu;
 
-    public int getMaNhacungCap() {
+    public String getMaNhacungCap() {
         return maNhacungCap;
     }
 
-    public void setMaNhacungCap(int maNhacungCap) {
+    public void setMaNhacungCap(String maNhacungCap) {
         this.maNhacungCap = maNhacungCap;
     }
 
@@ -65,7 +72,7 @@ public class NhaCungCap {
         this.ghiChu = ghiChu;
     }
 
-    public NhaCungCap(int maNCC, String tenNCC, String diaChi, String soDT, String email, String ghiChu) {
+    public NhaCungCap(String maNCC, String tenNCC, String diaChi, String soDT, String email, String ghiChu) {
         this.maNhacungCap = maNCC;
         this.tenNhaCungCap = tenNCC;
         this.diaChi = diaChi;
@@ -76,4 +83,4 @@ public class NhaCungCap {
     }
     
     
-}
+}*/

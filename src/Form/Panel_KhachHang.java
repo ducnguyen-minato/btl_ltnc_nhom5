@@ -6,12 +6,15 @@
 package Form;
 
 import DoiTuong.KhachHang;
+import java.awt.print.PrinterException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import ketnoicsdl.KetNoiCSDL;
@@ -43,14 +46,13 @@ public class Panel_KhachHang extends javax.swing.JPanel {
             statement = conn.createStatement();
             result = statement.executeQuery(query);
             while(result.next()){
-                khachHang = new KhachHang(result.getInt("makhachhang"),result.getString("tenkhachhang")
-                        ,result.getString("diachi"),result.getString("sodienthoai"),result.getString("email"),result.getDouble("tongtien"),result.getString("loaikhachhang"),result.getString("ghichu"));
+                khachHang = new KhachHang(result.getString(1),result.getString(2)
+                        ,result.getString(3),result.getString(4),result.getString(5),result.getDouble(6),result.getString(7),result.getString(8));
                 khachHangList.add(khachHang);
             }
           
         }
-        catch(Exception ex){
-            ex.printStackTrace();
+        catch(SQLException ex){
         }
         return khachHangList;
     }
@@ -59,8 +61,8 @@ public class Panel_KhachHang extends javax.swing.JPanel {
         model = (DefaultTableModel) BangKhachHang.getModel();
         Object[] row = new Object[8];
         for(int i=0; i < list.size();i++){
-            row[0] = list.get(i).getMaKhachHang();
-            row[1] = list.get(i).getTenKhachHang();
+            row[0] = list.get(i).getId();
+            row[1] = list.get(i).getName();
             row[2] = list.get(i).getDiaChi();
             row[3] = list.get(i).getSoDienThoai();
             row[4] = list.get(i).getEmail();
@@ -68,8 +70,7 @@ public class Panel_KhachHang extends javax.swing.JPanel {
             row[6] = list.get(i).getLoaiKhachHang();
             row[7] = list.get(i).getGhiChu();
             model.addRow(row);
-        }
-       
+        }       
     }
       private void ThucHienTruyVan(String query,String message){
         conn = kn.getConn();
@@ -100,7 +101,7 @@ public class Panel_KhachHang extends javax.swing.JPanel {
         txtDiaChi.setText(tbmodel.getValueAt(i,2).toString());
         txtSoDT.setText(tbmodel.getValueAt(i, 3).toString());
         txtEmail.setText(tbmodel.getValueAt(i, 4).toString());
-        labelTongTien.setText(tbmodel.getValueAt(i, 5).toString()); 
+        txtTongTien.setText(tbmodel.getValueAt(i, 5).toString()); 
         String loaiKH = tbmodel.getValueAt(i, 6).toString();
         switch (loaiKH) {
             case "Khách hàng vip":
@@ -118,31 +119,29 @@ public class Panel_KhachHang extends javax.swing.JPanel {
       
     }
      private void Them(){
-        int maKH = Integer.parseInt(txtMaKH.getText());
         double tongTien = Double.parseDouble(txtTongTien.getText());
-        String query = "insert into khachhang values('"+maKH+"','"+txtTenKH.getText()+"',"
+        String query = "insert into khachhang values('"+txtMaKH.getText()+"','"+txtTenKH.getText()+"',"
                 + "'"+txtDiaChi.getText()+"','"+txtSoDT.getText()+"',"
                 + "'"+txtEmail.getText()+"','"+tongTien+"','"+cbLoaiKH.getSelectedItem().toString()+"','"+txtGhiChu.getText()+"')";
         ThucHienTruyVan(query, "Them");
         Clear();
     }
     private void Sua(){
-        int maKH = Integer.parseInt(txtMaKH.getText());
-        double tongTien = Double.parseDouble(labelTongTien.getText());
-        String query = "update khachhang set makhachhang = '"+maKH+"', tenkhachhang ='"+txtTenKH.getText()+"',diachi = '"+txtDiaChi.getText()+"',"
-                + "sodienthoai='"+txtSoDT.getText()+"',email ='"+txtEmail.getText()+"',tongtien='"+tongTien+"',loaikhachhang = '"+cbLoaiKH.getSelectedItem().toString()+"',ghichu='"+txtGhiChu.getText()+"' where makhachhang = '"+txtMaKH.getText()+"'";
+        double tongTien = Double.parseDouble(txtTongTien.getText());
+        String query = "update khachhang set MaKH = '"+txtMaKH.getText()+"', TenKH ='"+txtTenKH.getText()+"',DiaChi = '"+txtDiaChi.getText()+"',"
+                + "SDT='"+txtSoDT.getText()+"',Email ='"+txtEmail.getText()+"',TongTien='"+tongTien+"',LoaiKhachHang = '"+cbLoaiKH.getSelectedItem().toString()+"',GhiChu='"+txtGhiChu.getText()+"' where MaKH = '"+txtMaKH.getText()+"'";
         ThucHienTruyVan(query, "Sua");
         Clear();
         
     }
     private void Xoa(){
-        String query = "delete from khachhang where makhachhang = '"+txtMaKH.getText()+"'";
+        String query = "delete from khachhang where MaKH = '"+txtMaKH.getText()+"'";
         ThucHienTruyVan(query,"Xoa");
         Clear();        
     }
      private void TimKiem(){
         String lenh = txtTimKiem.getText();
-        String query = "select * from quanlysieuthi.khachhang where makhachhang like '%"+lenh+"'or tenkhachhang like '%"+lenh+"'or sodienthoai = '%"+lenh+"'";
+        String query = "select * from quanlysieuthidienmay.khachhang where MaKH like '%"+lenh+"%'or TenKH like '%"+lenh+"%'or SDT like '%"+lenh+"%'";
         try{
             conn = kn.getConn();
             statement = conn.createStatement();
@@ -170,14 +169,14 @@ public class Panel_KhachHang extends javax.swing.JPanel {
         int col = 0;
         int row = 0;
         while(rs.next()){
-            BangKhachHang.setValueAt(rs.getInt("makhachhang"), row, col); col++;
-            BangKhachHang.setValueAt(rs.getString("tenkhachhang"), row, col); col++;
-            BangKhachHang.setValueAt(rs.getString("diachi"), row, col); col++;
-            BangKhachHang.setValueAt(rs.getString("sodienthoai"), row, col); col++;
-            BangKhachHang.setValueAt(rs.getString("email"), row, col); col++;
-            BangKhachHang.setValueAt(rs.getString("tongtien"), row, col); col++;
-            BangKhachHang.setValueAt(rs.getString("loaikhachhang"), row, col); col++;           
-            BangKhachHang.setValueAt(rs.getString("ghichu"), row, col); col++;
+            BangKhachHang.setValueAt(rs.getString("MaKH"), row, col); col++;
+            BangKhachHang.setValueAt(rs.getString(2), row, col); col++;
+            BangKhachHang.setValueAt(rs.getString(3), row, col); col++;
+            BangKhachHang.setValueAt(rs.getString(4), row, col); col++;
+            BangKhachHang.setValueAt(rs.getString(5), row, col); col++;
+            BangKhachHang.setValueAt(rs.getString(6), row, col); col++;
+            BangKhachHang.setValueAt(rs.getString(7), row, col); col++;           
+            BangKhachHang.setValueAt(rs.getString(8), row, col); col++;
             
         }
    
@@ -191,6 +190,7 @@ public class Panel_KhachHang extends javax.swing.JPanel {
         txtEmail.setText("");
         txtTongTien.setText("");
         txtGhiChu.setText("");
+        txtTimKiem.setText("");
     }
     
 
@@ -235,7 +235,7 @@ public class Panel_KhachHang extends javax.swing.JPanel {
         txtGhiChu = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(204, 204, 255));
-        setPreferredSize(new java.awt.Dimension(1300, 650));
+        setPreferredSize(new java.awt.Dimension(1300, 630));
 
         BangKhachHang.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         BangKhachHang.setModel(new javax.swing.table.DefaultTableModel(
@@ -390,6 +390,11 @@ public class Panel_KhachHang extends javax.swing.JPanel {
         btnIn.setForeground(new java.awt.Color(0, 0, 204));
         btnIn.setText("In");
         btnIn.setBorder(null);
+        btnIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInActionPerformed(evt);
+            }
+        });
 
         label.setBackground(new java.awt.Color(255, 255, 255));
         label.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -569,6 +574,17 @@ public class Panel_KhachHang extends javax.swing.JPanel {
         // TODO add your handling code here:
         Clear();
     }//GEN-LAST:event_btnClearActionPerformed
+
+    private void btnInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInActionPerformed
+        
+        MessageFormat header = new MessageFormat("BẢNG NHÂN VIÊN");
+        MessageFormat footer = new MessageFormat("Page{0,number,integer}");
+            try {
+                BangKhachHang.print(JTable.PrintMode.NORMAL,header,footer);
+            } catch (PrinterException ex) {
+               
+            }
+    }//GEN-LAST:event_btnInActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
